@@ -1,0 +1,23 @@
+<h1>word count	</h1>
+
+<form action="{% url 'count' %}">
+	<textarea cols="40" rows="5" name="fulltext"></textarea>
+	<br />	
+	<input type="submit" value="Count"/>
+	<a href={% url 'home' %}>Start Again</a>
+</form>
+
+
+<h1>There are {{count}} word in the text	</h1>
+
+<h1>Your Text: &nbsp;{{fulltext}}</h1>
+
+
+<h1>Word Count:</h1>
+ 
+{% for word, counttotal in sortedword %}
+
+{{word}} &nbsp;-> &nbsp;{{counttotal}}
+<br />
+
+{% endfor %}
